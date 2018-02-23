@@ -12,8 +12,7 @@ Public Class PagoAbono
 
 
         currentReciboId = CType(Session.Item("recibo"), String)
-            currentReciboId = "1"
-            loadCliente()
+        loadCliente()
             GridView1.AutoGenerateColumns = False
             Dim ds As New DataSet()
 

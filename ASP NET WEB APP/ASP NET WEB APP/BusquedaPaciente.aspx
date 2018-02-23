@@ -1,5 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="BusquedaRecibo.aspx.vb" Inherits="ASP_NET_WEB_APP.BusquedaRecibo" %>
-
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="BusquedaPaciente.aspx.vb" Inherits="ASP_NET_WEB_APP.BusquedaPaciente" %>
 
 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
@@ -62,7 +61,7 @@
              <div class="container">
       <div class="header clearfix">
         <nav>
-          <ul class="nav nav-pills float-right">
+            a<ul class="nav nav-pills float-right">
             <li class="nav-item">
               <a class="nav-link" href="Factura">Facturas <span class="sr-only">(current)</span></a>
             </li>
@@ -104,6 +103,12 @@
                       <center>
                           <table>
                               <tr>
+                                 <td>
+                                      <p>
+                                          Cedula
+                                      </p>
+                                  </td>
+
                                   <td>
                                       <p>
                                           Nombre
@@ -118,48 +123,20 @@
                                       <p>
                                           2ndo Apellido</p>
                                   </td>
-                                  <td>
-                                      <p>
-                                          Dia
-                                      </p>
-                                  </td>
-                                  <td>
-                                      <p>
-                                          Mes
-                                      </p>
-                                  </td>
-                                  <td>
-                                      <p>
-                                          Año
-                                      </p>
-                                  </td>
-                                  <td>
-                                      <p>
-                                          #Recibo
-                                      </p>
-                                  </td>
+
                               </tr>
                               <tr>
-                                  <td>
-                                      <asp:TextBox ID="nombre" runat="server" Width="109px"></asp:TextBox>
+                                    <td>
+                                      <asp:TextBox ID="txtCedula" runat="server" Width="109px"></asp:TextBox>
                                   </td>
                                   <td>
-                                      <asp:TextBox ID="apellido1" runat="server" Width="129px"></asp:TextBox>
+                                      <asp:TextBox ID="txtNombre" runat="server" Width="109px"></asp:TextBox>
                                   </td>
                                   <td>
-                                      <asp:TextBox ID="apellido2" runat="server" Width="159px"></asp:TextBox>
+                                      <asp:TextBox ID="txtApellido" runat="server" Width="129px"></asp:TextBox>
                                   </td>
                                   <td>
-                                      <asp:TextBox ID="day" runat="server" Width="84px"></asp:TextBox>
-                                  </td>
-                                  <td>
-                                      <asp:TextBox ID="month" runat="server" Width="71px"></asp:TextBox>
-                                  </td>
-                                  <td>
-                                      <asp:TextBox ID="year" runat="server" Width="89px"></asp:TextBox>
-                                  </td>
-                                  <td>
-                                      <asp:TextBox ID="factura" runat="server"></asp:TextBox>
+                                      <asp:TextBox ID="txtApellido2" runat="server" Width="159px"></asp:TextBox>
                                   </td>
                               </tr>
                           </table>
@@ -173,33 +150,19 @@
                   <div>
                   </div>
                   <center>
-                      <asp:GridView ID="gvCustomers" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" CssClass="Grid" DataKeyNames="idRecibo" ForeColor="Black" GridLines="Horizontal" OnRowCommand="GridView1_RowCommand" OnRowDataBound="OnRowDataBound" onrowediting="GridView1_RowEditing">
+                      <asp:GridView ID="gvCustomers" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" CssClass="Grid" DataKeyNames="IdRefraccion" ForeColor="Black" GridLines="Horizontal" OnRowCommand="GridView1_RowCommand" OnRowDataBound="OnRowDataBound" onrowediting="GridView1_RowEditing">
                           <Columns>
-                              <asp:TemplateField>
-                                  <ItemTemplate>
-                <img alt = "" style="cursor: pointer" src="images/plus.png" />
-                                      <asp:Panel ID="pnlOrders" runat="server" Style="display: none">
-                                          <asp:GridView ID="gvOrders" runat="server" AutoGenerateColumns="false" CssClass="ChildGrid" ForeColor="#333333">
-                                              <Columns>
-                                                  <asp:BoundField DataField="fecha" HeaderText="Fecha" ItemStyle-Width="150px" />
-                                                  <asp:BoundField DataField="descripcion" HeaderText="Detalles" ItemStyle-Width="150px" />
-                                                  <asp:BoundField DataField="doctor" HeaderText="Doctor" ItemStyle-Width="150px" />
-                                                 <asp:TemplateField></asp:TemplateField>
-                                              </Columns>
-                                          </asp:GridView>
-                                      </asp:Panel>
-                                  </ItemTemplate>
-                              </asp:TemplateField>
-                              <asp:BoundField DataField="idRecibo" HeaderText="# Recibo" ItemStyle-Width="150px">
+                
+                              <asp:BoundField DataField="IdRefraccion" HeaderText="Refraccion#" ItemStyle-Width="150px">
                               <ItemStyle Width="150px" />
                               </asp:BoundField>
                               <asp:BoundField DataField="Nombre" HeaderText="Nombre" ItemStyle-Width="150px">
                               <ItemStyle Width="150px" />
                               </asp:BoundField>
-                              <asp:BoundField DataField="1erapell" HeaderText="Apellido1" ItemStyle-Width="150px">
+                              <asp:BoundField DataField="1erApell" HeaderText="Apellido1" ItemStyle-Width="150px">
                               <ItemStyle Width="150px" />
                               </asp:BoundField>
-                              <asp:BoundField DataField="2doapell" HeaderText="Apellido2" ItemStyle-Width="150px">
+                              <asp:BoundField DataField="descripcion" HeaderText="Doctor" ItemStyle-Width="150px">
                               <ItemStyle Width="150px" />
                               </asp:BoundField>
                               <asp:BoundField DataField="Fecha" HeaderText="Fecha" ItemStyle-Width="150px">

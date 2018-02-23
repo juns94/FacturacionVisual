@@ -1,4 +1,5 @@
 ﻿Imports System.Data
+Imports System.Globalization
 Imports MySql.Data.MySqlClient
 Public Class Factura
     Inherits System.Web.UI.Page
@@ -68,8 +69,10 @@ Public Class Factura
 
             ' Display the grand total of the order formatted as currency.
             If (Not total Is Nothing) Then
+                Dim nfi As New NumberFormatInfo()
+                nfi.NumberGroupSeparator = " "
 
-                total.Text = "₡" + orderTotal.ToString()
+                total.Text = "₡" + orderTotal.ToString("n", nfi)
 
             End If
 
@@ -105,7 +108,7 @@ Public Class Factura
 
 
             Else
-                    txtRestante.Text = (orderTotal).ToString
+                txtRestante.Text = (orderTotal).ToString
             End If
             txtTotal.Text = orderTotal.ToString
 
@@ -678,10 +681,10 @@ Public Class Factura
             ")"
 
         Dim connection As New MySqlConnection(connectionString)
-            connection.Open()
-            Dim command As New MySqlCommand(strcommand, connection)
-            command.ExecuteNonQuery()
-            connection.Close()
+        connection.Open()
+        Dim command As New MySqlCommand(strcommand, connection)
+        command.ExecuteNonQuery()
+        connection.Close()
 
 
     End Sub

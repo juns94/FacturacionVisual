@@ -180,7 +180,7 @@
             footerstyle-forecolor="White">
             <itemtemplate>
               <%#
-                                     (((Double.Parse(Eval("Cant", "{0:c}")) * Double.Parse(Eval("Monto", "{0:c}")) - (Double.Parse(Eval("Monto", "{0:c}")) * ((Double.Parse((Eval("Descuento", "{0:c}").Replace("%", "")))) / 100)))))
+                                     (((Double.Parse(Eval("Cant", "{0:c}").Trim) * Double.Parse(Eval("Monto", "{0:c}").Trim) - (Double.Parse(Eval("Monto", "{0:c}").Trim) * ((Double.Parse((Eval("Descuento", "{0:c}").Replace("%", "").Trim))) / 100)))))
                 
                   %>
             </itemtemplate>
@@ -213,7 +213,7 @@
                   <td class="auto-style7">Restante</td>
               </tr>
               <tr>
-                  <td> <asp:TextBox text="0" ID="txtTotal" runat="server" ReadOnly="True" Width="208px" />
+                  <td> <asp:TextBox text="0" ID="txtTotal" runat="server" ReadOnly="True" Width="208px" TextMode="Number" />
                   </td>
                   <td>
                       <asp:TextBox ID="txtAbono" runat="server" TextMode="DateTime"  AutoPostBack="true"  ></asp:TextBox></td>

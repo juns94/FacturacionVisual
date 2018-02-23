@@ -206,6 +206,7 @@
   <ItemGroup>
     <Content Include="Abono.aspx" />
     <Content Include="Busqueda.aspx" />
+    <Content Include="BusquedaPaciente.aspx" />
     <Content Include="BusquedaRecibo.aspx" />
     <Content Include="Cierre.aspx" />
     <Content Include="Codigo.aspx" />
@@ -216,6 +217,7 @@
     <Content Include="Default.aspx" />
     <Content Include="DetalleProducto.aspx" />
     <Content Include="Detalles.aspx" />
+    <Content Include="DetallesExamen.aspx" />
     <Content Include="DetallesFactura.aspx" />
     <Content Include="DetallesInventario.aspx" />
     <Content Include="DetallesItem.aspx" />
@@ -297,6 +299,13 @@
       <DependentUpon>Busqueda.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="BusquedaPaciente.aspx.designer.vb">
+      <DependentUpon>BusquedaPaciente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BusquedaPaciente.aspx.vb">
+      <DependentUpon>BusquedaPaciente.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="BusquedaRecibo.aspx.designer.vb">
       <DependentUpon>BusquedaRecibo.aspx</DependentUpon>
     </Compile>
@@ -337,6 +346,13 @@
     </Compile>
     <Compile Include="Detalles.aspx.vb">
       <DependentUpon>Detalles.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="DetallesExamen.aspx.designer.vb">
+      <DependentUpon>DetallesExamen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DetallesExamen.aspx.vb">
+      <DependentUpon>DetallesExamen.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="DetallesFactura.aspx.designer.vb">
